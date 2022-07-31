@@ -3,7 +3,7 @@ This repository contains Timeseries Prediction Models
 
 <h2> Machine Learning Model </h2>
 
-lag(time-sequence) is adopted to predict timeseries data with Machine Learning Models 
+<h5>※ <b>lag</b> is adopted to predict timeseries data with Machine Learning Models</h5>
 
   - <h4>Ridge Regression</h4>
   - <h4>Support Vector Regression</h4>
