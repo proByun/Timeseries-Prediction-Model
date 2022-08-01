@@ -22,7 +22,5 @@ This repository contains Timeseries Prediction Models
 
 # Recursive Timeseries Prediction Model
 
-  - <h4>LSTM</h4>
-
   - <h4>Recursive LSTM</h4>
   
