@@ -28,9 +28,9 @@ This repository contains Timeseries Prediction Models
  
     - <h5> Base Model Pool</h5>
     
-      - <h5>Ridge Regression</h5>
-      - <h5>Support Vector Regression</h5>
-      - <h5>Random Forest Regression</h5>
+      - <h6>Ridge Regression</h6>
+      - <h6>Support Vector Regression</h6>
+      - <h6>Random Forest Regression</h6>
 
     
       
