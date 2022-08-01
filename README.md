@@ -1,4 +1,4 @@
-# Timeseries-Prediction-Model
+# Timeseries Prediction Model
 This repository contains Timeseries Prediction Models
 
 <h2> Machine Learning Model </h2>
@@ -20,7 +20,7 @@ This repository contains Timeseries Prediction Models
   
 &nbsp;
 
-# Recursive Model
+# Recursive Timeseries Prediction Model
 
   - <h4>LSTM</h4>
 
