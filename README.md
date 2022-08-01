@@ -18,5 +18,9 @@ This repository contains Timeseries Prediction Models
 
   - <h4>LSTM</h4>
   
+  
+# LSTM Model
+  - <h4>LSTM</h4>
+
   - <h4>Recursive LSTM</h4>
   
