@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Jul 31 18:50:59 2022
-
-@author: User
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Sun Jul 31 16:43:28 2022
 
 @author: Junhyun
@@ -116,7 +109,7 @@ class TimeSeriesRegression():
             {'gamma':[0.0001, 0.001, 0.01, 0.1, 1.0]}
         ]
         svr = SVR()
-        grid_cv = GridSearchCV(svr, param_grid, cv=5, scoring='neg_mean_squared_error', verbose=2)
+        grid_cv = GridSearchCV(svr, param_grid, cv=5, scoring='neg_mean_squared_error', verbose=1)
         grid_cv.fit(X_train, y_train)
         print("최적 하이퍼 파라미터:\n", grid_cv.best_params_)
 
@@ -125,24 +118,31 @@ class TimeSeriesRegression():
 
         return({'trainPrediction':svr_train_pred, 'testPrediction':svr_test_pred})
 
-    # LSTM (수정해야함)
-    def LSTM(self, data, X_train, X_test, y_train, y_test, epochs=100):
+    def LSTM_model(self, X_train, X_test, y_train, y_test, epochs=50):
+        """
 
-        data = pd.DataFrame(data)
-        
-        # scale data (딥러닝을 돌리기 위해서는 scale 필요)
-        scaler = MinMaxScaler(feature_range=(0, 1)) # 0~1사이로 scale
-        scaled = scaler.fit_transform(data.values)
-        scaled_df = pd.DataFrame(scaled, columns=data.columns)
+        Parameters
+        ----------
+        X_train : Array
+            Train input data, shape=(nrow, lag, ncol)
+        X_test : Array
+            Test input data, shape=(nrow, lag, ncol)
+        y_train : Array
+            Train input data, shape=(nrow,)
+        y_test : Array
+            Train input data, shape=(nrow,)
+        epochs : int
+            LSTM 학습횟수
 
+        Returns
+        -------
+        trainPrediction : Array
+            Train Prediction
+        testPrediction : Array
+            Test Prediction
 
-        # 2차원 array를 1차원으로 변형, 후에 3차원으로 변형
-        X_trainD = DimensionTransform(X_train.values)
-        X_train = X_trainD.reshape(X_train.shape[0], lag, data.shape[1])
+        """
 
-        # 2차원 array를 1차원으로 변형, 후에 3차원으로 변형
-        X_testD = DimensionTransform(X_test.values)
-        X_test = X_testD.reshape(X_test.shape[0], lag, data.shape[1])
 
         # LSTM의 구조
         model = Sequential()
@@ -154,12 +154,9 @@ class TimeSeriesRegression():
         model.compile(loss='mse', optimizer='adam')
 
         # fit network
-        history = model.fit(X_train, y_train, epochs=epochs, verbose=1, shuffle=False) # epochs : 반복횟수
+        history = model.fit(X_train, y_train, epochs=epochs, verbose=0, shuffle=False) # epochs : 반복횟수
 
         lstm_train_pred = model.predict(X_train)
         lstm_test_pred = model.predict(X_test)
-
-        lstm_train_pred = lstm_train_pred.reshape(len(lstm_train_pred),)
-        lstm_test_pred = lstm_test_pred.reshape(len(lstm_test_pred),)
 
         return({'trainPrediction':lstm_train_pred, 'testPrediction':lstm_test_pred})
