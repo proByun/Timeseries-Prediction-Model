@@ -20,7 +20,7 @@ This repository contains Timeseries Prediction Models
   
 &nbsp;
 
-# LSTM Model
+# Recursive Model
 
   - <h4>LSTM</h4>
 
