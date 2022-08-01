@@ -24,3 +24,5 @@ This repository contains Timeseries Prediction Models
 
   - <h4>Recursive LSTM</h4>
   
+  - <h4>Recursive Bayesian Ensemble Model (RBEM)</h4>
+  
