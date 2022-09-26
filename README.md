@@ -22,7 +22,7 @@ This repository contains Timeseries Prediction Models
 
 # Recursive Timeseries Prediction Model
 
-  - <h4>Recursive Timeseires Prediction</h4>
+  - <h4>Recursive Timeseries Prediction</h4>
     
     - <h6>Ridge Regression</h6>
     - <h6>Support Vector Regression</h6>
