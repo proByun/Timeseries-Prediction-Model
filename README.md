@@ -28,7 +28,6 @@ This repository contains Timeseries Prediction Models
     - <h6>Support Vector Regression</h6>
     - <h6>Random Forest Regression</h6>
     - <h6>ARIMA</h6>
-    - <h6>LSTM</h6>
 
   - <h4>Recursive LSTM</h4>
   
