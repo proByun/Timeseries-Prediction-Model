@@ -117,6 +117,26 @@ class TimeSeriesRegression():
         svr_test_pred = grid_cv.predict(X_test)
 
         return({'trainPrediction':svr_train_pred, 'testPrediction':svr_test_pred})
+    
+    # ARIMA
+    def ARIMA_model(self, y_train, n_periods=5):
+
+        auto_arima_model = auto_arima(y_train, 
+                                      start_p=0, max_p=10, 
+                                      start_q=0, max_q=10, 
+                                      seasonal=False,
+                                      d=1,
+                                      trace=False,
+                                      error_action='ignore',  
+                                      suppress_warnings=True, 
+                                      stepwise=False,
+                            )
+        auto_arima_model.fit(y_train)
+        arima_test_pred = auto_arima_model.predict(n_periods=n_periods)
+
+        print(auto_arima_model)
+
+        return({'testPrediction':arima_test_pred})
 
     def LSTM_model(self, X_train, X_test, y_train, y_test, epochs=50):
         """
@@ -142,7 +162,6 @@ class TimeSeriesRegression():
             Test Prediction
 
         """
-
 
         # LSTM의 구조
         model = Sequential()
