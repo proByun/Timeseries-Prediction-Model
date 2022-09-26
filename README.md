@@ -23,7 +23,13 @@ This repository contains Timeseries Prediction Models
 # Recursive Timeseries Prediction Model
 
   - <h4>Recursive Timeseires Prediction</h4>
-  
+    
+    - <h6>Ridge Regression</h6>
+    - <h6>Support Vector Regression</h6>
+    - <h6>Random Forest Regression</h6>
+    - <h6>ARIMA</h6>
+    - <h6>LSTM</h6>
+
   - <h4>Recursive LSTM</h4>
   
   - <h4>Recursive Bayesian Ensemble Model (RBEM)</h4>
